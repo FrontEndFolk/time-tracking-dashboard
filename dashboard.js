@@ -1,5 +1,5 @@
 const jsonURL = 'data.json';
-const selectors = document.querySelectorAll('.dashboard__selectors');
+const selectors = document.querySelectorAll('.card__selectors');
 
 function getJSON(url) {
     return fetch(url).then(response => response.json());
@@ -24,10 +24,14 @@ class dashBoardItem {
         const { current, previous } = timeframes[this.view];
         const id = title.toLowerCase().replace(' ', '-');
         this.container.insertAdjacentHTML('beforeend', `
-        <div class='dashboard__item dashboard__item--${id}'>
-        <p class='dashboard__title'>${title}</p>
-        <p class='dashboard__cur'>${current}hrs</p>
-        <p class='dashboard__prev'>last ${this.view} ${previous}hrs</p>
+        <div class='dashboard__item dashboard__item--${id} tracking-card'>
+            <section class="tracking-card__body">
+                <header class="tracking-card__header">
+                    ${title}
+                </header>
+                <p class='dashboard__cur'>${current}</p>
+                <p class='dashboard__prev'>last ${dashBoardItem.PERIODS[this.view]} ${previous} hrs</p>
+            </section>
         </div>
         `);
 
