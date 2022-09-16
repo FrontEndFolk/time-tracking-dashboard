@@ -1,6 +1,5 @@
 const jsonURL = 'data.json';
-const selectors = document.querySelectorAll('.card__selectors');
-
+const selectors = document.querySelectorAll('.card__selector');
 function getJSON(url) {
     return fetch(url).then(response => response.json());
 }
@@ -29,14 +28,14 @@ class dashBoardItem {
                 <header class="tracking-card__header">
                     ${title}
                 </header>
-                <p class='dashboard__cur'>${current}</p>
-                <p class='dashboard__prev'>last ${dashBoardItem.PERIODS[this.view]} ${previous} hrs</p>
+                <p class='tracking-card__cur'>${current}hrs</p>
+                <p class='tracking-card__prev'>last ${dashBoardItem.PERIODS[this.view]} ${previous} hrs</p>
             </section>
         </div>
         `);
 
-        this.curr = document.querySelector(`.dashboard__item--${id} .dashboard__cur`);
-        this.prev = document.querySelector(`.dashboard__item--${id} .dashboard__prev`);
+        this.curr = document.querySelector(`.dashboard__item--${id} .tracking-card__cur`);
+        this.prev = document.querySelector(`.dashboard__item--${id} .tracking-card__prev`);
 
     }
 
@@ -57,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
     getJSON(jsonURL).then(data => {
         const activities = data.map(el => new dashBoardItem(el));
         selectors.forEach(e => e.addEventListener('click', (event) => {
-            activities.forEach(act => act.changeView(event.target.textContent));
+            selectors.forEach(e => e.classList.remove('card__selector--active'));
+            e.classList.add('card__selector--active');
+            activities.forEach(act => act.changeView(e.textContent));
         }));
     })
 

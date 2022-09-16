@@ -6,8 +6,17 @@
 
 
 :root {
-    --bgcMain: rgba(12, 31, 106, 0.784);
-    --bgcSec:
+    --blue-100: hsl(236, 100%, 87%);
+    --blue-200: hsl(235, 45%, 61%);
+    --blue-300: hsl(195, 74%, 62%);
+    --blue-400: hsl(246, 80%, 60%);
+    --blue-500: hsl(235, 46%, 20%);
+    --blue-600: hsl(226, 43%, 10%);
+    --red-100: hsl(15, 100%, 70%);
+    --red-200: hsl(348, 100%, 68%);
+    --green: hsl(145, 58%, 55%);
+    --violet: hsl(264, 64%, 52%);
+    --orange: hsl(43, 84%, 65%);
 }
 
 body,
@@ -17,6 +26,8 @@ html {
 
 body {
     font-size: 16px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .wrapper {
@@ -26,8 +37,6 @@ body {
     align-items: center;
     height: 100vh;
 }
-
-main {}
 
 .attribution {
     margin-top: auto;
@@ -62,31 +71,50 @@ main {}
     }
 
     &__item {
-        padding-top: 1rem;
+        padding-top: 1.75rem;
         border-radius: 10px;
 
         &--work {
-            background-color: red;
+            background-image: url(../images/icon-work.svg);
+            background-color: var(--red-100);
+            background-repeat: no-repeat;
+            background-position: 92% -8%;
+
         }
 
         &--play {
-            background-color: red;
+            background-image: url(../images/icon-play.svg);
+            background-color: var(--blue-100);
+            background-repeat: no-repeat;
+            background-position: 92% -8%;
         }
 
         &--study {
-            background-color: red;
+            background-image: url(../images/icon-study.svg);
+            background-color: var(--red-200);
+            background-repeat: no-repeat;
+            background-position: 92% -8%;
         }
 
         &--exercise {
-            background-color: red;
+            background-color: var(--green);
+            background-image: url(../images/icon-exercise.svg);
+            background-repeat: no-repeat;
+            background-position: 92% -8%;
         }
 
         &--social {
-            background-color: red;
+            background-color: var(--violet);
+            background-image: url(../images/icon-social.svg);
+            background-repeat: no-repeat;
+            background-position: 92% -8%;
         }
 
         &--self-care {
-            background-color: red;
+            background-color: var(--orange);
+            background-image: url(../images/icon-self-care.svg);
+            background-repeat: no-repeat;
+            background-position: 92% -8%;
         }
     }
 }
@@ -94,9 +122,26 @@ main {}
 
 .tracking-card {
     &__body {
-        background-color: var(--bgcMain);
+        background-color: var(--blue-500);
         border-radius: 10px;
         height: 100%;
+        padding: 1rem;
+    }
+
+    &__header {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    &__cur {
+        margin-top: 1.2rem;
+        font-size: 2.25rem;
+        font-weight: 500; // поставить нормальный шрифт
+    }
+
+    &__prev {
+        margin-top: 0.9rem;
+        font-size: 0.6rem;
     }
 }
 
@@ -104,12 +149,12 @@ main {}
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    background-color: var(--bgcMain);
+    background-color: var(--blue-500);
 
     &__profile {
         padding: 1rem 1rem 2rem 1rem;
         flex-basis: 60%;
-        background-color: rgb(42, 100, 225);
+        background-color: var(--blue-400);
         border-radius: 15px;
     }
 
@@ -129,7 +174,23 @@ main {}
     }
 
     &__selectors {
-        padding: 1rem;
+        padding: 1rem 1rem 1.6rem 1rem;
         list-style: none;
+        cursor: pointer;
+        color: var(--blue-100);
+        font-size: 0.8rem;
+    }
+
+    &__selector {
+        margin-top: 1.2rem;
+
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        &--active {
+            color: #fff;
+        }
     }
 }
