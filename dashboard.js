@@ -27,9 +27,10 @@ class dashBoardItem {
             <section class="tracking-card__body">
                 <header class="tracking-card__header">
                     ${title}
+                    <img src="images/icon-ellipsis.svg">
                 </header>
                 <p class='tracking-card__cur'>${current}hrs</p>
-                <p class='tracking-card__prev'>last ${dashBoardItem.PERIODS[this.view]} ${previous} hrs</p>
+                <p class='tracking-card__prev'>last ${dashBoardItem.PERIODS[this.view]} - ${previous} hrs</p>
             </section>
         </div>
         `);
@@ -46,7 +47,7 @@ class dashBoardItem {
         const { current, previous } = this.data.timeframes[view];
         this.view = view;
         this.curr.textContent = `${current} hrs`;
-        this.prev.textContent = `last ${this.view} ${previous}hrs`
+        this.prev.textContent = `last ${dashBoardItem.PERIODS[this.view]} - ${previous}hrs`
     }
 
 }
