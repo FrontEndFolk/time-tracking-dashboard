@@ -167,6 +167,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 1rem;
+}
+.tracking-card__header h2 {
   font-size: 0.8rem;
   font-weight: 500;
 }

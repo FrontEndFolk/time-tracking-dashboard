@@ -153,8 +153,11 @@ body {
         justify-content: space-between;
         align-items: center;
         margin-top: 1rem;
-        font-size: 0.8rem;
-        font-weight: 500;
+
+        h2 {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
     }
 
     &__cur {

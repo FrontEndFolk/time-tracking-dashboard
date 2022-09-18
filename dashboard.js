@@ -26,7 +26,7 @@ class dashBoardItem {
         <div class='dashboard__item dashboard__item--${id} tracking-card'>
             <section class="tracking-card__body">
                 <header class="tracking-card__header">
-                    ${title}
+                   <h2> ${title} </h2>
                     <img src="images/icon-ellipsis.svg" alt="dots">
                 </header>
                 <p class='tracking-card__cur'>${current}hrs</p>
