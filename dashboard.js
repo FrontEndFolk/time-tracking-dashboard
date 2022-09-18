@@ -27,7 +27,7 @@ class dashBoardItem {
             <section class="tracking-card__body">
                 <header class="tracking-card__header">
                     ${title}
-                    <img src="images/icon-ellipsis.svg">
+                    <img src="images/icon-ellipsis.svg" alt="dots">
                 </header>
                 <p class='tracking-card__cur'>${current}hrs</p>
                 <p class='tracking-card__prev'>last ${dashBoardItem.PERIODS[this.view]} - ${previous} hrs</p>
